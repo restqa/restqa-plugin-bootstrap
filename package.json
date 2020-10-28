@@ -1,5 +1,5 @@
 {
-  "name": "restqa-plugin-boostrap",
+  "name": "@restqa/restqa-plugin-boostrap",
   "version": "1.0.0",
   "description": "Functional Test engine based on Gerkin Bootstrap - RestQa",
   "private": false,
