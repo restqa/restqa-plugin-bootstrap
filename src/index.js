@@ -1,4 +1,4 @@
 module.exports = {
-  world: require('./world'),
-  data: require('./data')
+  World: require('./world'),
+  Data: require('./data')
 }

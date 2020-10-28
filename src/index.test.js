@@ -4,5 +4,5 @@ beforeEach(() => {
 
 test('constructors', () => {
   const Index = require('./index')
-  expect(Object.keys(Index)).toEqual(['world', 'data'])
+  expect(Object.keys(Index)).toEqual(['World', 'Data'])
 })
