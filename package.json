@@ -1,0 +1,52 @@
+{
+  "name": "@restqa/restqa-plugin-boostrap",
+  "version": "1.0.0",
+  "description": "Functional Test engine based on Gerkin Bootstrap - RestQa",
+  "private": false,
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test": "jest",
+    "test:watch": "jest --watch --coverage",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/restqa/restqa-plugin-bootstrap.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/restqa/restqa-plugin-bootstrap/issues"
+  },
+  "homepage": "https://github.com/restqa/restqa-plugin-bootstrap#readme",
+  "dependencies": {
+    "@restqa/restqdata": "^0.1.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.1",
+    "nodemon": "^2.0.6",
+    "standard": "^15.0.0"
+  },
+  "keywords": [
+    "test",
+    "cucumber",
+    "restqa",
+    "restqa-plugin",
+    "Behavior driven development",
+    "BDD",
+    "cucumber-js"
+  ],
+  "author": "Olivier Rodomond",
+  "license": "MIT",
+  "standard": {
+    "globals": [],
+    "env": [
+      "jest"
+    ],
+    "yoda": [
+      2,
+      "never"
+    ]
+  }
+}
