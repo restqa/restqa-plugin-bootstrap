@@ -49,7 +49,7 @@ function Data (options) {
 
   function get (value) {
     if (typeof value !== 'string') return value
-    const properties = value.match(matchRegexp)
+    const properties = value.match(new RegExp(matchRegexp.source, 'g'))
     if (!properties) return value
 
     return properties.reduce((value, item) => {

@@ -160,6 +160,19 @@ describe('# Data', () => {
       expect(result).toEqual('bar')
     })
 
+    test('get - when the value has multiple  placehoder strings', () => {
+      require('@restqa/restqdata')
+      jest.mock('@restqa/restqdata')
+
+      const Data = require('./data')()
+      Data.set('foo', 'bar')
+      Data.set('foo1', 'bar1')
+      Data.set('foo2', 'bar2')
+      const result = Data.get('this is the first one {{ foo }}, then seconde one {{ foo1 }} or the last one {{ foo2 }}')
+
+      expect(result).toEqual('this is the first one bar, then seconde one bar1 or the last one bar2')
+    })
+
     test('get - when the value is a  placehoder string - different symbole', () => {
       require('@restqa/restqdata')
       jest.mock('@restqa/restqdata')
