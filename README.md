@@ -23,7 +23,7 @@ This project will gives you a small booster to create a new plugin by providing 
 Example: 
 
 ```js
-const { World } = require('@restqa/restqa-plugin-boostrap')
+const { World } = require('@restqa/restqa-plugin-bootstrap')
 
 
 class YourModuleWorld extends World {
