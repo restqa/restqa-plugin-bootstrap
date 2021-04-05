@@ -29,7 +29,7 @@ describe('# world', () => {
 
     expect(world._config).toEqual({ foo: 'bar', data: {} })
     expect(world._data).not.toBeNull()
-    expect(world._data.set.mock.calls.length).toBe(0)
+    expect(world._data.set.mock.calls).toHaveLength(0)
   })
 
   test('setConfig with secret', () => {
@@ -53,7 +53,7 @@ describe('# world', () => {
 
     expect(world.getConfig()).toEqual(config)
     expect(world.data).not.toBeNull()
-    expect(world.data.set.mock.calls.length).toBe(1)
+    expect(world.data.set.mock.calls).toHaveLength(1)
     expect(world.data.set.mock.calls[0][0]).toBe('so')
     expect(world.data.set.mock.calls[0][1]).toBe('blur')
   })
@@ -78,6 +78,6 @@ describe('# world', () => {
 
     expect(world.getConfig()).toEqual(config)
     expect(world.data).toBeNull()
-    expect(Data.mock.calls.length).toBe(0)
+    expect(Data.mock.calls).toHaveLength(0)
   })
 })

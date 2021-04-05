@@ -24,9 +24,41 @@
     "@restqa/restqdata": "^0.1.1"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^7.0.0",
+    "eslint": "^7.23.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
     "jest": "^26.6.1",
-    "nodemon": "^2.0.6",
+    "jest-runner-eslint": "^0.10.0",
     "standard": "^15.0.0"
+  },
+  "jest": {
+    "watchPlugins": [
+      "jest-runner-eslint/watch-fix"
+    ],
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "projects": [
+      {
+        "displayName": "test"
+      },
+      {
+        "runner": "jest-runner-eslint",
+        "displayName": "lint",
+        "testMatch": [
+          "<rootDir>/src/**/*.js"
+        ]
+      }
+    ]
+  },
+  "jest-runner-eslint": {
+    "cliOptions": {
+      "fix": true
+    }
   },
   "keywords": [
     "test",
@@ -37,15 +69,5 @@
     "BDD",
     "cucumber-js"
   ],
-  "author": "Olivier Rodomond",
-  "standard": {
-    "globals": [],
-    "env": [
-      "jest"
-    ],
-    "yoda": [
-      2,
-      "never"
-    ]
-  }
+  "author": "Olivier Rodomond"
 }

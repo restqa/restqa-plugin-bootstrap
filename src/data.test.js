@@ -10,7 +10,7 @@ describe('# Data', () => {
 
       require('./data')()
 
-      expect(RestQData.mock.calls.length).toBe(1)
+      expect(RestQData.mock.calls).toHaveLength(1)
       const expectedOptions = {
         startSymbol: '{{',
         endSymbol: '}}'
@@ -28,7 +28,7 @@ describe('# Data', () => {
       }
       require('./data')(expectedOptions)
 
-      expect(RestQData.mock.calls.length).toBe(1)
+      expect(RestQData.mock.calls).toHaveLength(1)
       expect(RestQData.mock.calls[0][0]).toEqual(expectedOptions)
     })
   })
@@ -65,7 +65,7 @@ describe('# Data', () => {
       `
 
       Data.parse({ scenario })
-      expect(get.mock.calls.length).toEqual(0)
+      expect(get.mock.calls).toHaveLength(0)
     })
 
     test('Parse string in order to get all the placeholded values', async () => {
@@ -92,7 +92,7 @@ describe('# Data', () => {
       `
 
       Data.parse({ scenario })
-      expect(get.mock.calls.length).toEqual(3)
+      expect(get.mock.calls).toHaveLength(3)
       expect(get.mock.calls[0]).toEqual(['a', '1'])
       expect(get.mock.calls[1]).toEqual(['b', '1'])
       expect(get.mock.calls[2]).toEqual(['c', '1'])
@@ -123,7 +123,7 @@ describe('# Data', () => {
       `
 
       Data.parse({ scenario })
-      expect(get.mock.calls.length).toEqual(1)
+      expect(get.mock.calls).toHaveLength(1)
       expect(get.mock.calls[0]).toEqual(['a', '1'])
     })
   })
@@ -202,7 +202,7 @@ describe('# Data', () => {
       const result = Data.getFile('my-file.png')
 
       expect(result).toEqual('/usr/src/my-file.png')
-      expect(storage.get.mock.calls.length).toBe(1)
+      expect(storage.get.mock.calls).toHaveLength(1)
       expect(storage.get.mock.calls[0][0]).toBe('my-file.png')
     })
   })
